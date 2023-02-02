@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+class HelloWorldClass extends React.Component {
+
+  render(){
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+
+function HelloWorldFn(props){
+  return <h1>Hello, {props.name}!</h1>;
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <>
+    <HelloWorldFn name={'test user'} />
+    <HelloWorldClass name={'test user'} />
+  </>
 }
 
 export default App;
